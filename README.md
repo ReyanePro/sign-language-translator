@@ -7,24 +7,20 @@
 ![MediaPipe](https://img.shields.io/badge/MediaPipe-0.10+-orange)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
-<p align="center">
-  <img src="demo/screenshot.png" alt="Demo Screenshot" width="700">
-</p>
-
-## 🎯 About
+## About
 
 This project translates **American Sign Language (ASL) hand signs** into text in real-time using your webcam. It detects hand landmarks using MediaPipe, classifies them into ASL letters using a trained ML model, and allows you to **spell out words** letter by letter.
 
 ### Features
 
-- 🖐️ **Real-time hand detection** using MediaPipe
-- 🔤 **ASL alphabet recognition** (A-Y, excluding J & Z which require motion)
-- ✍️ **Word spelling mode** — hold a sign to confirm a letter, build words in real-time
-- 📊 **Confidence scoring** — see how sure the model is about each prediction
-- 🌐 **Two interfaces** — OpenCV webcam app + Gradio web interface
-- ⚡ **Runs locally** — no internet needed, all processing on your machine
+- **Real-time hand detection** using MediaPipe
+- **ASL alphabet recognition** (A-Y, excluding J & Z which require motion)
+- **Word spelling mode** — hold a sign to confirm a letter, build words in real-time
+- **Confidence scoring** — see how sure the model is about each prediction
+- **Two interfaces** — OpenCV webcam app + Gradio web interface
+- **Runs locally** — no internet needed, all processing on your machine
 
-## 🏗️ Architecture
+##  Architecture
 
 ```
 ┌─────────────┐    ┌──────────────┐    ┌──────────────┐    ┌──────────────┐
@@ -37,7 +33,7 @@ This project translates **American Sign Language (ASL) hand signs** into text in
                     Hand Landmarks      Letter + Confidence    Spelled Text
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -77,7 +73,7 @@ python src/collect_data.py
 - Aim for **50+ samples** per letter
 - Press **S** to save, **Q** to quit
 
-> 💡 **Tip:** Vary your hand position, angle, and distance slightly between samples for better model generalization.
+>  **Tip:** Vary your hand position, angle, and distance slightly between samples for better model generalization.
 
 ### Step 2: Train the Model
 
@@ -100,7 +96,7 @@ python web/gradio_app.py
 # Open http://localhost:7860
 ```
 
-## 🎮 How to Use
+##  How to Use
 
 1. Show an ASL hand sign in front of your camera
 2. The detected letter appears on screen with a confidence score
@@ -109,7 +105,7 @@ python web/gradio_app.py
 5. Use **SPACE** to add a space between words
 6. Use **BACKSPACE** to delete the last letter
 
-## 📂 Project Structure
+##  Project Structure
 
 ```
 sign-language-translator/
@@ -130,7 +126,7 @@ sign-language-translator/
 └── README.md
 ```
 
-## 🛠️ Technologies
+##  Technologies
 
 | Technology | Purpose |
 |---|---|
@@ -141,7 +137,7 @@ sign-language-translator/
 | **NumPy** | Data processing & feature engineering |
 | **Gradio** | Web interface |
 
-## 📊 Model Details
+##  Model Details
 
 **Input:** 42 hand landmark coordinates (21 points × 2D) + engineered features:
 - Fingertip-to-fingertip distances (10 pairs)
@@ -155,7 +151,7 @@ sign-language-translator/
 
 **Normalization:** Landmarks are centered on the wrist and scaled by hand size, making the model invariant to hand position and distance from camera.
 
-## 🤝 Contributing
+##  Contributing
 
 Contributions are welcome! Some ideas:
 
@@ -165,11 +161,11 @@ Contributions are welcome! Some ideas:
 - [ ] Text-to-speech output
 - [ ] Two-hand sign support
 
-## 📄 License
+##  License
 
 MIT License — see [LICENSE](LICENSE) for details.
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - [MediaPipe](https://mediapipe.dev/) by Google for hand tracking
 - [ASL Alphabet](https://www.handspeak.com/word/asl-eng/) reference
