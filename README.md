@@ -1,4 +1,4 @@
-# 🤟 ASL Sign Language Translator
+# ASL Sign Language Translator
 
 > Real-time American Sign Language detection and word spelling powered by Computer Vision and Machine Learning.
 
